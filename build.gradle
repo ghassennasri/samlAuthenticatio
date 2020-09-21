@@ -1,0 +1,131 @@
+buildscript {
+    dependencies {
+        classpath 'org.codehaus.groovy.modules.http-builder:http-builder:0.7.2'
+    }
+}
+plugins {
+    id 'java'
+    id "com.marklogic.ml-gradle" version "4.0.4"
+}
+
+
+group 'org.marklogic.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+ext {
+    MarkLogicConnectionClass = "org.marklogic.example.MarkLogicConnection"
+}
+
+
+import groovy.io.FileType
+import groovy.json.JsonSlurper
+import groovyx.net.http.ContentType
+import groovyx.net.http.HTTPBuilder
+import groovyx.net.http.HttpResponseException
+import groovyx.net.http.Method
+
+task runLoadDocsThroughOktaSSO(type: JavaExec) {
+    group = "Execution"
+    description = "Run Documents Load through OKTA SSO"
+    classpath = sourceSets.main.runtimeClasspath
+    main = MarkLogicConnectionClass
+    args = ["OKTA"]
+}
+task runLoadDocsThroughOneLoginSSO(type: JavaExec) {
+    group = "Execution"
+    description = "Run Documents Load through ONELOGIN SSO"
+    classpath = sourceSets.main.runtimeClasspath
+    main = MarkLogicConnectionClass
+    args = ["ONELOGIN"]
+}
+task createCustomRestServers(type: com.marklogic.gradle.task.MarkLogicTask) {
+//Read custom rest config files from custom-rest-instances directory
+    def list = []
+    def dir = new File("./custom-rest-instances")
+    dir.eachFileRecurse(FileType.FILES) { file ->
+        if (file.isFile() && file.getName().toLowerCase().endsWith(".json")) list << file
+    }
+    doLast {
+        //create REST instance for each REST config file in the directory
+        list.each {
+            def payload = new JsonSlurper().parseText(it.text)
+            def http = new HTTPBuilder("http://" + mlHost + ":8002/")
+            http.auth.basic mlUsername, mlPassword
+            try {
+                http.request(Method.POST) {
+                    uri.path = "LATEST/rest-apis"
+                    requestContentType = ContentType.JSON
+                    body = payload
+                    response.success = { resp ->
+                        assert resp.statusLine.statusCode == 201
+                    }
+                }
+            } catch (HttpResponseException e) {
+                //On exception with statusCode 400 verify that the rest server exists
+                if (e.statusCode == 400) {
+                    http.auth.basic mlUsername, mlPassword
+                    http.request(Method.GET) {
+                        uri.path = "LATEST/rest-apis/" + payload.get("rest-api").get("name")
+                        requestContentType = ContentType.JSON
+                        response.success = { r -> assert r.statusLine.statusCode == 200 }
+                    }
+                }
+            }
+        }
+    }
+}
+
+task setServerExternalSecurity(dependsOn: ['createCustomRestServers'], type: com.marklogic.gradle.task.MarkLogicTask) {
+    int i = 0;
+    def list = []
+    def dir = new File("./custom-rest-instances")
+    dir.eachFileRecurse(FileType.FILES) { file ->
+        if (file.isFile() && file.getName().toLowerCase().endsWith(".json")) list << file
+    }
+    doLast {
+        try {
+            def client = newClient()
+            list.each {
+                def payload = new JsonSlurper().parseText(it.text)
+                def serverName = payload.get("rest-api").get("name")
+                def external_security = i % 2 == 0 ? "OKTA-SAML" : "SAMLoneLogin"
+                String xquery = "xquery version \"1.0-ml\";\n" +
+                        "import module namespace admin = \"http://marklogic.com/xdmp/admin\"\n" +
+                        "      at \"/MarkLogic/admin.xqy\";\n" +
+                        "\n" +
+                        "let \$config := admin:get-configuration()\n" +
+                        "let \$groupid := admin:group-get-id(\$config, \"Default\")\n" +
+                        "let \$config:=admin:appserver-set-external-security(\$config,\n" +
+                        "           admin:appserver-get-id(\$config, \$groupid, \"" + serverName + "\"),\n" +
+                        "           \"" + external_security + "\",fn:false(),\"saml\")\n" +
+                        "           return admin:save-configuration(\$config)"
+                def result = client.newServerEval().xquery(xquery).evalAs(String.class)
+                i++
+
+            }
+        } finally {
+            newClient().release()
+        }
+    }
+}
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'com.marklogic', name: 'marklogic-client-api', version: '5.2.0'
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.11.3'
+
+
+    compile 'com.okta.authn.sdk:okta-authn-sdk-api:2.0.0'
+    runtime 'com.okta.authn.sdk:okta-authn-sdk-impl:2.0.0'
+    runtime 'com.okta.sdk:okta-sdk-httpclient:2.0.0'
+
+    compile group: 'com.onelogin', name: 'onelogin-java-sdk', version: '1.6.1'
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.30'
+}
+
+createCustomRestServers.dependsOn mlDeploy

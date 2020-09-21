@@ -1,0 +1,9 @@
+{ "rest-api": {
+    "name": "MYREST2",
+    "port": "8040",
+	"group": "Default",
+    "database": "SAMLAUTH-content",
+    "modules-database": "SAMLAUTH-modules",
+    "xdbc-enabled": true,
+    "error-format": "compatible"
+} }

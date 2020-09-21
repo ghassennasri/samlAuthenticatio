@@ -1,0 +1,35 @@
+{
+  "external-security-name": "OKTA-SAML",
+  "description": "SAML Auth through Okta",
+  "authentication": "saml",
+  "cache-timeout": 300,
+  "authorization": "saml",
+  "ldap-server": {
+    "ldap-server-uri": "",
+    "ldap-base": "",
+    "ldap-attribute": "",
+    "ldap-default-user": "",
+    "ldap-password": "",
+    "ldap-bind-method": "MD5",
+    "ldap-memberof-attribute": "",
+    "ldap-member-attribute": "",
+    "ldap-start-tls": false,
+    "ldap-certificate": "",
+    "ldap-private-key": "",
+    "ldap-nested-lookup": true,
+    "ldap-remove-domain": true
+  },
+  "saml-server": {
+    "saml-entity-id": "gnasriMLEntityID",
+    "saml-attribute-name": [
+      "usermail"
+    ],
+    "saml-privilege-attribute-name": "",
+    "http-options": null,
+    "saml-destination": "https://dev-184498.okta.com/app/marklogicdev184498_marklogic_1/exkz0ocqrR6qQF8KE4x6/sso/saml",
+    "saml-issuer": "http://www.okta.com/exkz0ocqrR6qQF8KE4x6",
+    "saml-idp-certificate-authority": "-----BEGIN CERTIFICATE-----\nMIIDpDCCAoygAwIBAgIGAXSQmwO+MA0GCSqGSIb3DQEBCwUAMIGSMQswCQYDVQQGEwJVUzETMBEG\nA1UECAwKQ2FsaWZvcm5pYTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzENMAsGA1UECgwET2t0YTEU\nMBIGA1UECwwLU1NPUHJvdmlkZXIxEzARBgNVBAMMCmRldi0xODQ0OTgxHDAaBgkqhkiG9w0BCQEW\nDWluZm9Ab2t0YS5jb20wHhcNMjAwOTE1MDcxMDUyWhcNMzAwOTE1MDcxMTUxWjCBkjELMAkGA1UE\nBhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExFjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xDTALBgNV\nBAoMBE9rdGExFDASBgNVBAsMC1NTT1Byb3ZpZGVyMRMwEQYDVQQDDApkZXYtMTg0NDk4MRwwGgYJ\nKoZIhvcNAQkBFg1pbmZvQG9rdGEuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA\nlFYCFs2wlgvTkJrTRxTDbnbfEbYcPFFgj/yDRVqxeErsc3sExkcFafIJdcqwaadUko0SmuE67MMe\nu/xNCuwSBKITNJT7GVq0jfJHPoVIEYs8vLdQGvCziwr4RpXdV6/k7bsJsP0tYyGwy6qzlLkBJ9vl\nqmkx48+gD+N4VrtWvAn5kWT0VLMKWNIqjIN/ST1l7aJEbT454MOp4eOw79m8gnGTQGFgfLsVs2/x\nD5ZLXv6UfIl9SORe2t0D0XsxSlVxyaQzti45RIQFqu4C9AguAE3i1SctCzA9Umz6MWcJBb1RAC7M\n8W+JDg3maGQXVu+nNbbl5ty5UWbys0ISCaqe0QIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBk09vD\no6/jG95FBSLiKeoHAPKkWU2QFmmQCoqST1zcTuK/7xw8jmZUC4/6Xi367Zh/zHHIEv+20RH5p6MP\nVfug/D5ovz8TXYHagG3qXJx1eRivxnB+Qky7DtUuvLWGtguar3mkt/BGCX3UWofl9q9QqUj+3e6O\nXx4mjWnGTrZPYUP4sSCutaX26jFT+yVP7tnQAhFGEbixcdHdd67YE0W+uJKRupRPzAceuqiNOR/x\nwpZQ/HHFlKTSYqYVACIfWHW5bUFeTCKsdFgVubmvb49ph5azgGkoL0dtj9y4S/WYjRkIO/sqfyus\nZ9xHSw6UVclqMpwJolk0pdLMZzokoqnI\n-----END CERTIFICATE-----",
+    "saml-sp-certificate": "",
+    "saml-sp-private-key": ""
+  }
+}

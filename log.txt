@@ -1,0 +1,105 @@
+2020-09-20 21:44:34:316 +0200 [main] DEBUG com.marklogic.client.impl.OkHttpServices - Posting documents
+2020-09-20 21:44:34:327 +0200 [main] DEBUG com.marklogic.client.impl.OkHttpServices - Sending multipart for /v1/documents
+2020-09-20 21:44:34:405 +0200 [main] DEBUG com.okta.sdk.impl.config.OptionalPropertiesSource - Unable to obtain properties from optional properties source com.okta.sdk.impl.config.ResourcePropertiesSource@305ffe9e
+2020-09-20 21:44:34:408 +0200 [main] DEBUG com.okta.sdk.impl.config.OptionalPropertiesSource - Unable to obtain properties from optional properties source com.okta.sdk.impl.config.YAMLPropertiesSource@302c971f
+2020-09-20 21:44:35:400 +0200 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+2020-09-20 21:44:35:404 +0200 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {tls}->http://127.0.0.1:8080->https://dev-184498.okta.com:443][total kept alive: 0; route allocated: 0 of 1073741823; total allocated: 0 of 2147483647]
+2020-09-20 21:44:35:429 +0200 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {tls}->http://127.0.0.1:8080->https://dev-184498.okta.com:443][total kept alive: 0; route allocated: 1 of 1073741823; total allocated: 1 of 2147483647]
+2020-09-20 21:44:35:433 +0200 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {tls}->http://127.0.0.1:8080->https://dev-184498.okta.com:443
+2020-09-20 21:44:35:440 +0200 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to /127.0.0.1:8080
+2020-09-20 21:44:35:444 +0200 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:62680<->127.0.0.1:8080
+2020-09-20 21:44:35:449 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> CONNECT dev-184498.okta.com:443 HTTP/1.1
+2020-09-20 21:44:35:450 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Host: dev-184498.okta.com
+2020-09-20 21:44:35:450 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.10 (Java/11.0.7)
+2020-09-20 21:44:35:450 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "CONNECT dev-184498.okta.com:443 HTTP/1.1[\r][\n]"
+2020-09-20 21:44:35:451 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Host: dev-184498.okta.com[\r][\n]"
+2020-09-20 21:44:35:451 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.10 (Java/11.0.7)[\r][\n]"
+2020-09-20 21:44:35:451 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
+2020-09-20 21:44:35:462 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "HTTP/1.0 200 Connection established[\r][\n]"
+2020-09-20 21:44:35:462 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+2020-09-20 21:44:35:465 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << HTTP/1.0 200 Connection established
+2020-09-20 21:44:35:466 +0200 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Tunnel to target created.
+2020-09-20 21:44:35:497 +0200 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled protocols: [TLSv1.3, TLSv1.2, TLSv1.1, TLSv1]
+2020-09-20 21:44:35:497 +0200 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled cipher suites:[TLS_AES_128_GCM_SHA256, TLS_AES_256_GCM_SHA384, TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_DSS_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_RSA_WITH_AES_256_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DHE_DSS_WITH_AES_256_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_DSS_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+2020-09-20 21:44:35:497 +0200 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory - Starting handshake
+2020-09-20 21:44:38:602 +0200 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory - Secure session established
+2020-09-20 21:44:38:602 +0200 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory -  negotiated protocol: TLSv1.3
+2020-09-20 21:44:38:602 +0200 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory -  negotiated cipher suite: TLS_AES_256_GCM_SHA384
+2020-09-20 21:44:38:603 +0200 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory -  peer principal: CN=dev-184498.okta.com, OU=PortSwigger CA, O=PortSwigger, C=PortSwigger
+2020-09-20 21:44:38:603 +0200 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory -  peer alternative names: [dev-184498.okta.com]
+2020-09-20 21:44:38:603 +0200 [main] DEBUG org.apache.http.conn.ssl.SSLConnectionSocketFactory -  issuer principal: CN=PortSwigger CA, OU=PortSwigger CA, O=PortSwigger, L=PortSwigger, ST=PortSwigger, C=PortSwigger
+2020-09-20 21:44:38:607 +0200 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: set socket timeout to 30000
+2020-09-20 21:44:38:607 +0200 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request POST /api/v1/authn HTTP/1.1
+2020-09-20 21:44:38:607 +0200 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+2020-09-20 21:44:38:607 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> POST /api/v1/authn HTTP/1.1
+2020-09-20 21:44:38:608 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Host: dev-184498.okta.com
+2020-09-20 21:44:38:608 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip
+2020-09-20 21:44:38:608 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept: application/json
+2020-09-20 21:44:38:608 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> User-Agent: okta-sdk-java/2.0.0 java/11.0.7 Windows 10/10.0
+2020-09-20 21:44:38:608 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Content-Type: application/json
+2020-09-20 21:44:38:608 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Content-Length: 82
+2020-09-20 21:44:38:608 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
+2020-09-20 21:44:38:609 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "POST /api/v1/authn HTTP/1.1[\r][\n]"
+2020-09-20 21:44:38:609 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Host: dev-184498.okta.com[\r][\n]"
+2020-09-20 21:44:38:609 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip[\r][\n]"
+2020-09-20 21:44:38:609 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept: application/json[\r][\n]"
+2020-09-20 21:44:38:609 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "User-Agent: okta-sdk-java/2.0.0 java/11.0.7 Windows 10/10.0[\r][\n]"
+2020-09-20 21:44:38:609 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Content-Type: application/json[\r][\n]"
+2020-09-20 21:44:38:609 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Content-Length: 82[\r][\n]"
+2020-09-20 21:44:38:610 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2020-09-20 21:44:38:610 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
+2020-09-20 21:44:38:610 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "{"relayState":null,"password":"Omar2018","username":"ghassen.nasri@marklogic.com"}"
+2020-09-20 21:44:39:645 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+2020-09-20 21:44:39:645 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Date: Sun, 20 Sep 2020 19:44:39 GMT[\r][\n]"
+2020-09-20 21:44:39:645 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Type: application/json;charset=UTF-8[\r][\n]"
+2020-09-20 21:44:39:645 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Connection: close[\r][\n]"
+2020-09-20 21:44:39:645 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Server: nginx[\r][\n]"
+2020-09-20 21:44:39:645 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Public-Key-Pins-Report-Only: pin-sha256="r5EfzZxQVvQpKo3AgYRaT7X2bDO/kj3ACwmxfdT2zt8="; pin-sha256="MaqlcUgk2mvY/RFSGeSwBRkI+rZ6/dxe/DuQfBT/vnQ="; pin-sha256="72G5IEvDEWn+EThf3qjR7/bQSWaS2ZSLqolhnO6iyJI="; pin-sha256="rrV6CLCCvqnk89gWibYT0JO6fNQ8cCit7GGoiVTjCOg="; max-age=60; report-uri="https://okta.report-uri.com/r/default/hpkp/reportOnly"[\r][\n]"
+2020-09-20 21:44:39:646 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Vary: Accept-Encoding[\r][\n]"
+2020-09-20 21:44:39:646 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "x-okta-request-id: X2exJ-y61LIWLaXA-qTYOwAACKQ[\r][\n]"
+2020-09-20 21:44:39:646 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "x-xss-protection: 0[\r][\n]"
+2020-09-20 21:44:39:646 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "p3p: CP="HONK"[\r][\n]"
+2020-09-20 21:44:39:646 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "x-rate-limit-limit: 500[\r][\n]"
+2020-09-20 21:44:39:646 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "x-rate-limit-remaining: 499[\r][\n]"
+2020-09-20 21:44:39:646 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "x-rate-limit-reset: 1600631139[\r][\n]"
+2020-09-20 21:44:39:646 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "cache-control: no-cache, no-store[\r][\n]"
+2020-09-20 21:44:39:646 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "pragma: no-cache[\r][\n]"
+2020-09-20 21:44:39:646 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "expires: 0[\r][\n]"
+2020-09-20 21:44:39:647 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "content-security-policy-report-only: default-src 'self' *.oktacdn.com dev-184498.okta.com; connect-src 'self' *.oktacdn.com *.mixpanel.com *.mapbox.com app.pendo.io data.pendo.io pendo-static-5634101834153984.storage.googleapis.com dev-184498.okta.com dev-184498-admin.okta.com https://oinmanager.okta.com data:; script-src 'unsafe-inline' 'unsafe-eval' 'self' *.oktacdn.com; style-src 'unsafe-inline' 'self' *.oktacdn.com app.pendo.io cdn.pendo.io pendo-static-5634101834153984.storage.googleapis.com; frame-src 'self' login.okta.com dev-184498.okta.com dev-184498-admin.okta.com; img-src 'self' *.oktacdn.com dev-184498.okta.com *.tiles.mapbox.com *.mapbox.com app.pendo.io data.pendo.io cdn.pendo.io pendo-static-5634101834153984.storage.googleapis.com data: blob:; font-src data: 'self' *.oktacdn.com fonts.gstatic.com; report-uri https://okta.report-uri.com/r/d/csp/reportOnly; report-to csp-report[\r][\n]"
+2020-09-20 21:44:39:647 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "report-to: {"group":"csp-report","max_age":31536000,"endpoints":[{"url":"https://okta.report-uri.com/r/d/csp/reportOnly"}],"include_subdomains":true}[\r][\n]"
+2020-09-20 21:44:39:647 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "x-content-type-options: nosniff[\r][\n]"
+2020-09-20 21:44:39:647 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Strict-Transport-Security: max-age=315360000; includeSubDomains[\r][\n]"
+2020-09-20 21:44:39:647 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "set-cookie: sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/[\r][\n]"
+2020-09-20 21:44:39:648 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "set-cookie: JSESSIONID=1FFE376AF71D93BC801FA36C858F8BBE; Path=/; Secure; HttpOnly[\r][\n]"
+2020-09-20 21:44:39:648 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Length: 472[\r][\n]"
+2020-09-20 21:44:39:648 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+2020-09-20 21:44:39:648 +0200 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "{"expiresAt":"2020-09-20T19:47:39.000Z","status":"SUCCESS","sessionToken":"20111v-CpJo8BSWPzR_HB-QkernrzdP5zlnkgTBvSA_gmVVjfxx_xN5","_embedded":{"user":{"id":"00uyzamusfpkbeKti4x6","passwordChanged":"2020-09-15T10:19:44.000Z","profile":{"login":"ghassen.nasri@marklogic.com","firstName":"Ghassen","lastName":"NASRI","locale":"en","timeZone":"America/Los_Angeles"}}},"_links":{"cancel":{"href":"https://dev-184498.okta.com/api/v1/authn/cancel","hints":{"allow":["POST"]}}}}"
+2020-09-20 21:44:39:649 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << HTTP/1.1 200 OK
+2020-09-20 21:44:39:649 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Date: Sun, 20 Sep 2020 19:44:39 GMT
+2020-09-20 21:44:39:649 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Type: application/json;charset=UTF-8
+2020-09-20 21:44:39:649 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Connection: close
+2020-09-20 21:44:39:649 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Server: nginx
+2020-09-20 21:44:39:649 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Public-Key-Pins-Report-Only: pin-sha256="r5EfzZxQVvQpKo3AgYRaT7X2bDO/kj3ACwmxfdT2zt8="; pin-sha256="MaqlcUgk2mvY/RFSGeSwBRkI+rZ6/dxe/DuQfBT/vnQ="; pin-sha256="72G5IEvDEWn+EThf3qjR7/bQSWaS2ZSLqolhnO6iyJI="; pin-sha256="rrV6CLCCvqnk89gWibYT0JO6fNQ8cCit7GGoiVTjCOg="; max-age=60; report-uri="https://okta.report-uri.com/r/default/hpkp/reportOnly"
+2020-09-20 21:44:39:649 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Vary: Accept-Encoding
+2020-09-20 21:44:39:650 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << x-okta-request-id: X2exJ-y61LIWLaXA-qTYOwAACKQ
+2020-09-20 21:44:39:650 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << x-xss-protection: 0
+2020-09-20 21:44:39:650 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << p3p: CP="HONK"
+2020-09-20 21:44:39:650 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << x-rate-limit-limit: 500
+2020-09-20 21:44:39:650 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << x-rate-limit-remaining: 499
+2020-09-20 21:44:39:650 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << x-rate-limit-reset: 1600631139
+2020-09-20 21:44:39:650 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << cache-control: no-cache, no-store
+2020-09-20 21:44:39:650 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << pragma: no-cache
+2020-09-20 21:44:39:650 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << expires: 0
+2020-09-20 21:44:39:650 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << content-security-policy-report-only: default-src 'self' *.oktacdn.com dev-184498.okta.com; connect-src 'self' *.oktacdn.com *.mixpanel.com *.mapbox.com app.pendo.io data.pendo.io pendo-static-5634101834153984.storage.googleapis.com dev-184498.okta.com dev-184498-admin.okta.com https://oinmanager.okta.com data:; script-src 'unsafe-inline' 'unsafe-eval' 'self' *.oktacdn.com; style-src 'unsafe-inline' 'self' *.oktacdn.com app.pendo.io cdn.pendo.io pendo-static-5634101834153984.storage.googleapis.com; frame-src 'self' login.okta.com dev-184498.okta.com dev-184498-admin.okta.com; img-src 'self' *.oktacdn.com dev-184498.okta.com *.tiles.mapbox.com *.mapbox.com app.pendo.io data.pendo.io cdn.pendo.io pendo-static-5634101834153984.storage.googleapis.com data: blob:; font-src data: 'self' *.oktacdn.com fonts.gstatic.com; report-uri https://okta.report-uri.com/r/d/csp/reportOnly; report-to csp-report
+2020-09-20 21:44:39:650 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << report-to: {"group":"csp-report","max_age":31536000,"endpoints":[{"url":"https://okta.report-uri.com/r/d/csp/reportOnly"}],"include_subdomains":true}
+2020-09-20 21:44:39:651 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << x-content-type-options: nosniff
+2020-09-20 21:44:39:651 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Strict-Transport-Security: max-age=315360000; includeSubDomains
+2020-09-20 21:44:39:651 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << set-cookie: sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/
+2020-09-20 21:44:39:651 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << set-cookie: JSESSIONID=1FFE376AF71D93BC801FA36C858F8BBE; Path=/; Secure; HttpOnly
+2020-09-20 21:44:39:651 +0200 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Length: 472
+2020-09-20 21:44:39:656 +0200 [main] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: Close connection
+2020-09-20 21:44:39:658 +0200 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection discarded
+2020-09-20 21:44:39:658 +0200 [main] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {tls}->http://127.0.0.1:8080->https://dev-184498.okta.com:443][total kept alive: 0; route allocated: 0 of 1073741823; total allocated: 0 of 2147483647]
+2020-09-20 21:45:46:730 +0200 [main] INFO org.marklogic.example.MarkLogicConnection - wrote 1155 songs to the Certification DB
+2020-09-20 21:45:46:730 +0200 [main] INFO com.marklogic.client.impl.DatabaseClientImpl - Releasing connection
+2020-09-20 21:45:46:730 +0200 [main] DEBUG com.marklogic.client.impl.OkHttpServices - Releasing connection

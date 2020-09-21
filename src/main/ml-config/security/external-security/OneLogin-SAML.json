@@ -1,0 +1,35 @@
+{
+  "external-security-name": "SAMLoneLogin",
+  "description": "",
+  "authentication": "saml",
+  "cache-timeout": 300,
+  "authorization": "saml",
+  "ldap-server": {
+    "ldap-server-uri": "",
+    "ldap-base": "",
+    "ldap-attribute": "",
+    "ldap-default-user": "",
+    "ldap-password": "",
+    "ldap-bind-method": "MD5",
+    "ldap-memberof-attribute": "",
+    "ldap-member-attribute": "",
+    "ldap-start-tls": false,
+    "ldap-certificate": "",
+    "ldap-private-key": "",
+    "ldap-nested-lookup": true,
+    "ldap-remove-domain": true
+  },
+  "saml-server": {
+    "saml-entity-id": "gnasriMLEntityID",
+    "saml-attribute-name": [
+      "usermail"
+    ],
+    "saml-privilege-attribute-name": "",
+    "http-options": null,
+    "saml-destination": "https://marklogic-support-dev.onelogin.com/trust/saml2/http-post/sso/cd95d803-e699-45f8-9a69-8d826085f09e",
+    "saml-issuer": "https://app.onelogin.com/saml/metadata/cd95d803-e699-45f8-9a69-8d826085f09e",
+    "saml-idp-certificate-authority": "-----BEGIN CERTIFICATE-----\nMIID4jCCAsqgAwIBAgIUau36U48m9LY/l3iaF08gHQRURnMwDQYJKoZIhvcNAQEF\nBQAwRzESMBAGA1UECgwJTWFya0xvZ2ljMRUwEwYDVQQLDAxPbmVMb2dpbiBJZFAx\nGjAYBgNVBAMMEU9uZUxvZ2luIEFjY291bnQgMB4XDTIwMDkxNjEyMzE0NFoXDTI1\nMDkxNjEyMzE0NFowRzESMBAGA1UECgwJTWFya0xvZ2ljMRUwEwYDVQQLDAxPbmVM\nb2dpbiBJZFAxGjAYBgNVBAMMEU9uZUxvZ2luIEFjY291bnQgMIIBIjANBgkqhkiG\n9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoqajy2Ll+Jw0H03FBLKZWyTUUmxH7sTItaIC\nOuCA1l0oE9EzM2o6Sf0aDgKdqXZpHsw73xfQh8WYvsW5xTxe2UDs9GXSUHRnyW8R\nmMy9Z2z1hDuvA1Gs2pU+BwuzgyZqLr0KExh5jRdEbOWfKGw/z383U1EG9Pj6LLrX\nXtET677w9Kqn0dDrnu1DyJ34NLesBmdfCTrRUb5LeWDZ+bfnHcQrycDi6MOWdHL8\niDPIDiwFDgBc5Mm8i97aF0OQNk9iFgP2axS755DL/ovTBYopwTGrGCMAVXQBZgwq\nxfVX6D0QL/15CNKcjwFsAp42opFfZ9XFC0pi4tJKYMSJwFSiEQIDAQABo4HFMIHC\nMAwGA1UdEwEB/wQCMAAwHQYDVR0OBBYEFK8nTS+IMkDhTI7+HTcdPVwhjb5zMIGC\nBgNVHSMEezB5gBSvJ00viDJA4UyO/h03HT1cIY2+c6FLpEkwRzESMBAGA1UECgwJ\nTWFya0xvZ2ljMRUwEwYDVQQLDAxPbmVMb2dpbiBJZFAxGjAYBgNVBAMMEU9uZUxv\nZ2luIEFjY291bnQgghRq7fpTjyb0tj+XeJoXTyAdBFRGczAOBgNVHQ8BAf8EBAMC\nB4AwDQYJKoZIhvcNAQEFBQADggEBAET3wrIQjqlEg4Q08IMA7ywRp61lr6OmAYVp\n/Z6AW1OESJUjDz3Kbc8FrCWz7ctW6CfJavM70MxwzIo5pIug9STulzNQKdrg+qcu\neXQUBwg/TDjDH0SUWHUcFKBdyo5DjhWGdU+dE440w0B2ubeF0gsKCzUIIpO1WMvN\n710iSZ/PMryLFSKRrUv3yflMTgHjy7LUSx5WF49NcPXzp3Q48psoi9dwQc/vEzVv\nogsjip5NcwppZjrgB7tNR7Iy46s5br+RoHQtOfSRhz0MsErfrFvmLA2FKuXVQ17O\ngpEQzRFVzvsW6l40AStyKzp7aXLzWC7MkXCkBmi7JNuz/zk4tMU=\n-----END CERTIFICATE-----\n",
+    "saml-sp-certificate": "",
+    "saml-sp-private-key": ""
+  }
+}
