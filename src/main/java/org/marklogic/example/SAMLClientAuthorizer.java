@@ -87,8 +87,8 @@ public class SAMLClientAuthorizer {
                 public void handleSuccess(AuthenticationResponse successResponse) {
                     if (Strings.hasLength(successResponse.getSessionToken())) {
                         /*Parse Okta html response using Jsoup to get SAMLResponse*/
-                        String sessionToken = getIDPToken(applicationEmbedLink, successResponse.getSessionToken());
-                        if (sessionToken != null) setAuthorizationToken(sessionToken);
+                        String samlResponse = getIDPToken(applicationEmbedLink, successResponse.getSessionToken());
+                        if (samlResponse != null) setAuthorizationToken(samlResponse);
                         setTokenExpiryTimestamp(successResponse.getExpiresAt());
                     }
                 }

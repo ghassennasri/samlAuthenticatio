@@ -44,6 +44,31 @@ task runLoadDocsThroughOneLoginSSO(type: JavaExec) {
     main = MarkLogicConnectionClass
     args = ["ONELOGIN"]
 }
+task deleteCustomRestServers(type: com.marklogic.gradle.task.MarkLogicTask){
+    def list = []
+    def dir = new File("./custom-rest-instances")
+    dir.eachFileRecurse(FileType.FILES) { file ->
+        if (file.isFile() && file.getName().toLowerCase().endsWith(".json")) list << file
+    }
+    doLast {
+        //delete REST instance for each REST server name to read from config file in the directory
+        list.each {
+            def payload = new JsonSlurper().parseText(it.text)
+            def http = new HTTPBuilder("http://" + mlHost + ":8002/")
+            http.auth.basic mlUsername, mlPassword
+            try {
+                http.request(Method.DELETE) {
+                    uri.path = "LATEST/rest-apis/" + payload.get("rest-api").get("name")
+                    response.success = { resp ->
+                        assert resp.statusLine.statusCode == 202
+                    }
+                }
+            } catch (HttpResponseException e) {
+                e.printStackTrace()
+            }
+        }
+    }
+}
 task createCustomRestServers(type: com.marklogic.gradle.task.MarkLogicTask) {
 //Read custom rest config files from custom-rest-instances directory
     def list = []
@@ -129,3 +154,4 @@ dependencies {
 }
 
 createCustomRestServers.dependsOn mlDeploy
+mlUndeploy.dependsOn(deleteCustomRestServers)
