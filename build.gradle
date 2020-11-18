@@ -69,7 +69,7 @@ task deleteCustomRestServers(type: com.marklogic.gradle.task.MarkLogicTask){
         }
     }
 }
-task createCustomRestServers(type: com.marklogic.gradle.task.MarkLogicTask) {
+task createCustomRestServers(dependsOn: mlDeploy,type: com.marklogic.gradle.task.MarkLogicTask) {
 //Read custom rest config files from custom-rest-instances directory
     def list = []
     def dir = new File("./custom-rest-instances")
@@ -153,5 +153,4 @@ dependencies {
     compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.30'
 }
 
-createCustomRestServers.dependsOn mlDeploy
 mlUndeploy.dependsOn(deleteCustomRestServers)
